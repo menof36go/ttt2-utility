@@ -17,7 +17,8 @@ local function GetMapFiles(addon, directory, depth)
 	end
 
     local title = addon.title
-
+    
+    if nil then
     local files, folders = file.Find(directory .. "*", title)
     for k, v in pairs(folders) do
 		GetMapFiles(addon, directory .. v .. "/", depth + 1)
@@ -27,6 +28,7 @@ local function GetMapFiles(addon, directory, depth)
 		if (string.sub(v, -4) == ".bsp") then
 			workshopMaps[tostring(v)] = tostring(addon.wsid)
 		end
+    end
     end
 end
 
