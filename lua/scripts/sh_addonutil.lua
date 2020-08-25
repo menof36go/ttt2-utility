@@ -17,7 +17,8 @@ local function GetMapFiles(addon, directory, depth)
 	end
 
     local title = addon.title
-
+    
+    if folders == nil then return end
     local files, folders = file.Find(directory .. "*", title)
     for k, v in pairs(folders) do
 		GetMapFiles(addon, directory .. v .. "/", depth + 1)
